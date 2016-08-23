@@ -1,4 +1,5 @@
 /**
+ * 1. Candies
  * Function determine how many different versions of 
  * gifts weighing exactly W grams can make Santa Claus
  * 
@@ -37,16 +38,8 @@ function getGiftOptions(X, Y, Z, W) {
 	return numberOfGiftOptions;
 }
 
-var X = 3;
-var Y = 5;
-var Z = 7;
-var W = 41;
-
-var result1 = getGiftOptions(X, Y, Z, W);
-console.log('X :: ' + X + '; Y :: ' + Y + '; Z :: ' + Z + 
-						  '; W :: ' + W + '; Versions of gifts :: ' + result1);
-
 /**
+ * 2. Secretary Jeniffer
  * Function determine the minimum time in seconds required for 
  * the preparation of N copies preparation by the two XeroX each 
  * of which spends a certain time for copying of a single list of paper
@@ -105,15 +98,8 @@ function getMinimumTimeDuplication(N, x, y) {
 	return elapsedTime;
 }
 
-var N = 111;
-var c1 = 19;
-var c2 = 22;
-
-var result2 = getMinimumTimeDuplication(N, c1, c2);
-console.log(N + ' копий при скорости ксерокса ' + c1 
-			  + ' и ' + c2 + ' займет ' + result2 + ' секунд.');
-
 /**
+ * 3. Sloboda friends 
  * Function determine how much friends has a particular person in the company.
  * Matrix N lines contain N numbers consisting of ones and zeros. And 
  * the unit standing in the i-th row and j-th column ensures that people 
@@ -127,23 +113,35 @@ console.log(N + ' копий при скорости ксерокса ' + c1
 function getNumberOfFriends(N, S) {
 	// variable for the number of friends
 	var numberOfFriends = 0;
-
 	// create an array that will be used to put a specific number of friends in
-	// as index, and also to check whether the found one was noticed earlier.
+	// as index and also to check whether the found one was noticed earlier.
 	// Initially put the index of a person with a specific number because they can't
 	// be their own friend and also from this index searching friends will be started
 	var friendsCollection = [S-1];
-	var arr = getMatrix(N);
+	// an array for storage matrix
+	var matrix = [];
+	var inputData;
+	var temp;
 
-	/*var arr = [
-					[0, 0, 0, 0, 0 ],
-					[0, 0, 1, 0, 0 ],
-					[0, 1, 0, 0, 1 ],
-					[0, 0, 0, 0, 1 ],
-					[0, 0, 1, 1, 0 ]];*/
+	// organize data entry for each person
+	for(var k = 0; k < N; k++)
+	{
+		// read the data for one person
+		inputData = prompt('Enter the data (separated by a space) for the person with ' + 
+						   'a specific number of person ' + (k+1) + ' :');
+		// split string by a separator and put the data into an array
+		temp = inputData.split(' ');
 
-	/*console.log(friendsCollection.length);
-	console.table(arr);*/
+		// go through each element 
+		for(var m = 0; m < N; m++)
+		{
+			// and converted into a number
+			temp[m] = +temp[m];
+		}
+
+		// put the an array of data into the end of the matrix
+		matrix.push(temp);
+	}
 
 	// looking for friends till friends of friends are found
 	for(var i = 0; i < friendsCollection.length; i++)
@@ -152,7 +150,7 @@ function getNumberOfFriends(N, S) {
 		for(var j = 0; j < N; j++)
 		{
 			// in case if relationships are friendly and found friend was not noticed earlier
-			if(arr[j][friendsCollection[i]] && friendsCollection.indexOf(j) === -1)
+			if(matrix[friendsCollection[i]][j] && friendsCollection.indexOf(j) === -1)
 			{
 				// increase the number of friends
 				numberOfFriends++;
@@ -161,49 +159,9 @@ function getNumberOfFriends(N, S) {
 				// that this friend was noticed
 				friendsCollection.push(j);
 			}
-			/*console.log('[' + j + '][' + friendsCollection[i] + '] :: ' 
-							+ arr[j][S-1] + ' ' + friendsCollection);*/
 		}
 	}
 
 	// return the number of friends
 	return numberOfFriends;
-}
-
-var N = 100;
-var S = 50;
-
-var result3 = getNumberOfFriends(N, S);
-console.log('Всего друзей :: ' + result3 + '. N :: ' + N + '; S :: ' + S);
-
-function rand (min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-function getMatrix(size) {
-	var arr = [];
-	var x, y;
-
-	for(var i = 0; i < size; i++) 
-	{
-		arr[i] = [];
-		for(var j = 0; j < size; j++) 
-		{
-			arr[i].push(0);
-		}
-	}
-
-	for(i = 0; i < size - 1; i++) 
-	{
-		x = rand(0, size);
-		y = rand(0, size);
-
-		if(x !== y)
-		{
-			arr[x][y] = 1;
-			arr[y][x] = 1;
-		}
-	}
-
-	return arr;
 }
