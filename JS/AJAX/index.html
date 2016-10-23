@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.descr {
+			width: 40%;
+			background-color: #ddd;
+			display: inline-block;
+		}
+		.content {
+			width: 59%;
+			background-color: yellow;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+		<form action="#" id="select-city">
+			<div class="row">
+				<label for="city">Enter city</label>
+				<input type="text" id="city" name="city">
+			</div>
+			<button type="submit">Пецнуть сюда!</button>
+		</form>
+
+		<div class="weather">
+			<div class="descr">Город</div>
+			<div class="content" id="city-name"></div>
+		</div>
+		<div class="weather">
+			<div class="descr">Температура, С</div>
+			<div class="content" id="temp"></div>
+		</div>
+		<div class="weather">
+			<div class="descr">Облачность, %</div>
+			<div class="content" id="clouds"></div>
+		</div>
+		<div class="weather">
+			<div class="descr">Влажность, %</div>
+			<div class="content" id="hum"></div>
+		</div>
+		<div class="weather">
+			<div class="descr">Время</div>
+			<div class="content" id="dt"></div>
+		</div>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
