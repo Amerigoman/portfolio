@@ -1,0 +1,67 @@
+﻿table {
+	margin: 0 auto;
+	background: #7E7E7E
+}
+
+table td {
+	height: 98px;
+	width: 98px;
+	font-size: 0
+}
+
+.closed {
+	background-image: url('https://kde.link/test/0.png');
+}
+
+.opened {
+	background-image: url('https://kde.link/test/1.png');
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+div.wrapper {
+  position: relative;
+}
+
+div.winner_menu {
+  position: absolute;
+  top: 5px;
+  right: 45%;
+}
+
+.winner_title {
+	font-size: 36px;
+	line-height: 40px;
+	margin: 1em 0 .6em 0;
+	font-weight: normal;
+	font-family: 'Hammersmith One', sans-serif;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+	color: #6Cf;
+}
+
+.winner_new_game_button {
+	display: inline;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	border-radius: .5em;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+.winner_button_wrapper {
+  text-align: center
+}
+
+.winner_new_game_button:hover {
+	text-decoration: none;
+}
+
+.winner_new_game_button:active {
+	position: relative;
+	top: 1px;
+}
