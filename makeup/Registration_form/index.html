@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Goto Web</title>
+
+	<link rel="stylesheet" href="css/default.css"></link>
+	<link rel="stylesheet" href="css/style.css"></link>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="step-side" style="display: none">
+			<div class="logo-container">
+				<img src="img/GOTO_WEB.jpg" alt="logo">
+			</div>
+			<div class="step-content">
+				<p class="welcome-title">Добро пожаловать в Gotoweb, выполните несколько простых шагов для начала работы с системой.</p>
+				<div class="step-1">
+					<div class="ellipse-current">
+						<div class="number-one-current"></div>
+					</div>
+					<span class="step-text current">
+						<p><strong>Мы просим вас заполнить несколько простых форм.</strong><br/>
+						Которые помогут нам взаимодействовать с вами на дружественном<br/>уровне.</p>
+					</span>					
+				</div>
+				
+				<div class="step-2">
+					<div class="ellipse-inactive">
+						<div class="number-two-inactive"></div>
+					</div>
+					<span class="step-text">
+						<p>Введите пожалуйста свой электроный адрес,  он будет логином<br/>к вашему личному кабинету. Придумайте пароль.</p>
+					</span>
+				</div>				
+			</div>
+
+			<div class="helper"><a href="#">Нужна помощь?</a></div>			
+		</div>
+
+		<div class="form-side" style="display: none">
+			<div class="form-wrapper">
+				<form action="/save/" method="POST">
+					<div class="step-one-form">
+						<p class="input-name">Имя</p>
+						<div class="input-container name">
+							<input type="text" name="name" placeholder="First name">
+							<span class="input-icon"></span>
+						</div>						
+						<p class="input-name">Фамилия</p>
+						<div class="input-container lastname">
+							<input type="text" name="surname" placeholder="Last name">
+							<span class="input-icon"></span>
+						</div>
+						<p class="input-name">Ваш контактный номер телефона</p>
+						<span class="remark">Не обязателен</span>
+						<div class="input-container phone">
+							<input type="tel" name="phone" placeholder="Phone">
+							<span class="input-icon"></span>
+						</div>
+						<div class="file_upload">
+							<div class="initials-container">
+								<div class="initials"></div>
+								<img src="img/Ellipse-initials.png" alt="initials">
+							</div>
+					        <div class="title-definition">Перетащите свое изображение в выделенную область<br/>или</div>
+					        <div class="file-button"><a href="#">Выберите его на компьютере</a></div>
+					        <input type="file" name="picture" accept="image/*,image/jpeg">
+					    </div>				    
+						<p class="size-limit-title">Размер файла не более - 5МБ, изображения не более - 400х400 px</p>
+						<div class="button-container">
+							<div class="next-step-title">Следующий Шаг</div>
+							<input type="button">
+						</div>						
+					</div>
+					<div class="step-two-form" style="display: none">
+						<p class="input-name">Электроная почта / Логин</p>
+						<div class="input-container email">
+							<input type="email" name="email" placeholder="E-mail">
+							<span class="input-icon">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						</div>
+						<p class="input-name">Пароль</p>
+						<span class="remark">Не менее 6 символов</span>
+						<div class="input-container password">
+							<input type="password"
+								   placeholder="&bull;&bull;&bull;&bull;&bull;&bull;">
+							<span class="input-icon eye">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						</div>
+						<p class="input-name">Повторите пароль</p>
+						<div class="input-container reply-password">
+							<input type="password" name="password" 
+								   placeholder="&bull;&bull;&bull;&bull;&bull;&bull;">
+							<span class="input-icon eye">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						</div>
+						<p class="input-name">Введите капчу</p>
+						<div class="capture">
+							<div class="capture-definition">Зона Капчи</div>							
+						</div>
+						<div class="button-container registration">
+							<div class="registration-title">Регистрация</div>
+							<input type="submit" value="">
+						</div>
+						<div class="button-container back-button">
+							<div class="back-button-title"><&nbsp;&nbsp;Вернуться назад</div>
+							<input type="button">
+						</div>
+						<div class="user-rules-and-agreement">Нажимая кнопку Регистрация, вы соглашаетесь с
+						<a href="#">правилами пользования</a><br/>и <a href="#">лицензионым соглашением</a>
+						</div>
+					</div>
+				</form>
+			</div>	
+		</div>
+	</div>
+
+</body>
+</html>
